@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="vue是数据驱动的，刚接触不太熟悉时，jQuery事件驱动的思维会影响到一些东西。比如想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
+<meta name="description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中响应点击事件显示/隐藏div">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/vue中响应点击事件显示-隐藏div/index.html">
 <meta property="og:site_name" content="陈同学">
-<meta property="og:description" content="vue是数据驱动的，刚接触不太熟悉时，jQuery事件驱动的思维会影响到一些东西。比如想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
-<meta property="og:updated_time" content="2017-04-20T14:17:02.667Z">
+<meta property="og:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
+<meta property="og:updated_time" content="2017-04-20T14:21:54.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中响应点击事件显示/隐藏div">
-<meta name="twitter:description" content="vue是数据驱动的，刚接触不太熟悉时，jQuery事件驱动的思维会影响到一些东西。比如想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
+<meta name="twitter:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
 
 
 
@@ -331,7 +331,7 @@
       
 
       
-        <p>vue是数据驱动的，刚接触不太熟悉时，jQuery事件驱动的思维会影响到一些东西。<br>比如想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。<br>最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。<br><a id="more"></a><br>示例：</p>
+        <p>vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。<br>比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。<br>最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。<br><a id="more"></a><br>示例：</p>
 <pre>
     &lt;div class="cont" v-on:click="toggle(index)" >
         &lt;div class="content" v-if="show_cont[index]">
