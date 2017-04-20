@@ -259,6 +259,193 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://matuyoyi.github.io/2017/04/20/锤子官网的3D效果轮播图的实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈同学">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈同学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/锤子官网的3D效果轮播图的实现/" itemprop="url">
+                  锤子官网的3D效果轮播图的实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T20:59:43+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着来自己实现一遍。<br>基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。</p>
+<pre>
+    $(function(){
+
+        //轮播图
+        var fade_conf= {
+            index : 0,
+            times : 3000,
+            el : ".carousel .carousel-inner .item",
+            toggle_el : ".carousel .carousel-control .item-dot"
+        }
+        function fadeIn(){
+            var $length = $(fade_conf.el).length;
+            for (var i = 0; i < $length; i++) {
+                var $this = $(fade_conf.el).eq(i);
+                var $index = $this.index();
+                if (i==fade_conf.index) {
+                    $this.addClass('active');
+                    $(fade_conf.toggle_el).eq($index).addClass('active');
+                }else{
+                    $this.removeClass('active');
+                    $(fade_conf.toggle_el).eq($index).removeClass('active')
+                }
+            }
+            fade_conf.index++;
+            if (fade_conf.index==$length) {
+                fade_conf.index = 0;
+            }
+        }
+        setInterval(function(){
+            fadeIn()
+        },fade_conf.times)
+
+        //3D效果
+        var pos_conf = {
+            orig_x : $('.carousel').offset().left+parseInt($('.carousel').css('width'))/2,
+            orig_y : $('.carousel').offset().top+parseInt($('.carousel').css('height'))/2,
+            offsetX : 15,
+            offsetY : 60
+        }
+        $('.carousel').mousemove(function(e) {
+            var x = pos_conf.orig_x - e.pageX;
+            var y = pos_conf.orig_y - e.pageY;
+            $(this).css('transition','');
+            $(this).css({transform: "rotateX("+y/pos_conf.offsetX+"deg) rotateY("+x/pos_conf.offsetY+"deg)"})
+        });
+        $('.carousel').mouseleave(function(){
+            $(this).css({transform: "rotateX("+0+"deg) rotateY("+0+"deg)",transition:"transform "+.9+"s ease"})
+        })
+
+
+        $('.panel').find('.dot li').hover(function(){
+            $(this).closest('.item').find('.dot li').removeClass('active');
+            $(this).addClass('active');
+            $(this).closest('.item').find('.img_cover img').css('z-index','1');
+            $(this).closest('.item').find('.img_cover img').eq($(this).index()).css('z-index','2');
+        })
+
+        $(fade_conf.toggle_el).mouseover(function(){
+            var $index = $(this).index();
+            $(fade_conf.toggle_el).removeClass('active')
+            $(this).addClass('active');
+            $(fade_conf.el).removeClass('active');
+            $(fade_conf.el).eq($index).addClass('active');
+            fade_conf.index = $index;
+        })
+    })
+</pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://matuyoyi.github.io/2017/04/20/利用js实现背景帧动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -803,7 +990,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
