@@ -586,7 +586,7 @@
       
         
           <p>项目中需要用到帧动画的效果，第一反应是用css3的animation去实现。发现写出来的效果不理想，于是决定还是用js写一下。<br>思路每次改变一定量的背景图片position的值</p>
-<p><pre><br>    function turndown(el,x){<br>        for (var i = 0; i &lt; 5; i++) {<br>            (function(i) {<br>                setTimeout(function() {<br>                    i = (i-4)<em>x;<br>                    $(el).css(“background-position”,”0 “+i+”px”);<br>                }, i </em> 100);<br>            })(i);<br>        }<br>    }<br></pre><br>
+<p><pre><br>    function bgFrame(el,x){<br>        for (var i = 0; i &lt; 5; i++) {<br>            (function(i) {<br>                setTimeout(function() {<br>                    i = (i-4)<em>x;<br>                    $(el).css(“background-position”,”0 “+i+”px”);<br>                }, i </em> 100);<br>            })(i);<br>        }<br>    }<br></pre><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/利用js实现背景帧动画/#more" rel="contents">
