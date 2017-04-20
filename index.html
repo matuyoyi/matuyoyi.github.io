@@ -259,6 +259,128 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://matuyoyi.github.io/2017/04/20/用nodejs解决http403禁止访问/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈同学">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈同学">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/用nodejs解决http403禁止访问/" itemprop="url">
+                  用nodejs解决http403禁止访问
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T20:05:54+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。<br>用nodejs起一个服务，这里用到request模块：npm install request</p>
+<p><pre><br>    var request = require(“request”);<br>    var url = require(‘url’);<br>    var http = require(‘http’);<br>    http.createServer(function (req, res) {<br>        try {<br>            var params = url.parse(req.url, true).query;<br>            request(params.url).pipe(res)<br>        } catch(err) {<br>            console.log(err)<br>        }<br>    }).listen(3000);<br>    console.log(‘Server running at <a href="http://127.0.0.1:3000/" target="_blank" rel="external">http://127.0.0.1:3000/</a>‘);<br></pre><br>在项目中引用url时前面加上localhost:3000/?id={url} //{url}为需要引用的真实url;<br>这时项目是在访问localhost:3000/?id={url},不会有权限问题。<br>而访问localhost:3000/?id={url}时，发送了一个请求，经过上面的代码会将请求的url解析并存在params变量中，params.url就是项目引用的真实url。然后request(params.url)，相当于直接访问{url}链接。通过pipe方法将数据返回回来。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://matuyoyi.github.io/2017/04/20/display-none与visible-hidden的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -559,7 +681,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
