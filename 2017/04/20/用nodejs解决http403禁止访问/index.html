@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。用nodejs起一个服务，这里用到request模块：npm install request     var request = require(“request”);    var url">
+<meta name="description" content="在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用nodejs解决http403禁止访问">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/用nodejs解决http403禁止访问/index.html">
 <meta property="og:site_name" content="陈同学">
-<meta property="og:description" content="在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。用nodejs起一个服务，这里用到request模块：npm install request     var request = require(“request”);    var url">
-<meta property="og:updated_time" content="2017-04-20T12:30:02.026Z">
+<meta property="og:description" content="在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。">
+<meta property="og:updated_time" content="2017-04-20T13:28:34.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用nodejs解决http403禁止访问">
-<meta name="twitter:description" content="在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。用nodejs起一个服务，这里用到request模块：npm install request     var request = require(“request”);    var url">
+<meta name="twitter:description" content="在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。">
 
 
 
@@ -331,7 +331,7 @@
       
 
       
-        <p>在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。<br>用nodejs起一个服务，这里用到request模块：npm install request</p>
+        <p>在自己做项目时，经常会用到一些开放的API，如果服务器做了一些限制，可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。这时候用nodejs可以很简单的绕过限制去访问。<br><a id="more"></a><br>用nodejs起一个服务，这里用到request模块：npm install request</p>
 <p><pre><br>    var request = require(“request”);<br>    var url = require(‘url’);<br>    var http = require(‘http’);<br>    http.createServer(function (req, res) {<br>        try {<br>            var params = url.parse(req.url, true).query;<br>            request(params.url).pipe(res)<br>        } catch(err) {<br>            console.log(err)<br>        }<br>    }).listen(3000);<br>    console.log(‘Server running at <a href="http://127.0.0.1:3000/" target="_blank" rel="external">http://127.0.0.1:3000/</a>‘);<br></pre><br>在项目中引用url时前面加上localhost:3000/?id={url} //{url}为需要引用的真实url;<br>这时项目是在访问localhost:3000/?id={url},不会有权限问题。<br>而访问localhost:3000/?id={url}时，发送了一个请求，经过上面的代码会将请求的url解析并存在params变量中，params.url就是项目引用的真实url。然后request(params.url)，相当于直接访问{url}链接。通过pipe方法将数据返回回来。</p>
 
       
