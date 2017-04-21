@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
+<meta name="description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="锤子官网的3D效果轮播图的实现">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/锤子官网的3D效果轮播图的实现/index.html">
 <meta property="og:site_name" content="陈同学">
-<meta property="og:description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
-<meta property="og:updated_time" content="2017-04-21T17:02:17.004Z">
+<meta property="og:description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css">
+<meta property="og:updated_time" content="2017-04-21T17:30:16.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="锤子官网的3D效果轮播图的实现">
-<meta name="twitter:description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
+<meta name="twitter:description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css">
 
 
 
@@ -421,8 +421,10 @@
       
 
       
-        <p><div></div></p>
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=431795064&auto=1&height=66"></iframe><br><br>看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。<br>基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。<br><a id="more"></a></p>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=431795064&auto=1&height=66"></iframe>
+
+
+<p>看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。<br>基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。<br><a id="more"></a></p>
 <pre>
     $(function(){
         //轮播图
@@ -718,10 +720,12 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">陈同学</span>
+  <a class="theme-link" href="https://github.com/matuyoyi">
+    <span class="author" itemprop="copyrightHolder">陈同学</span>
+  </a>
 </div>
 
-
+<!-- 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
@@ -732,7 +736,7 @@
     NexT.Muse
   </a>
 </div>
-
+ -->
 
         
 
