@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css">
+<meta name="description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="锤子官网的3D效果轮播图的实现">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/锤子官网的3D效果轮播图的实现/index.html">
 <meta property="og:site_name" content="陈同学">
-<meta property="og:description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css">
-<meta property="og:updated_time" content="2017-04-21T15:07:38.811Z">
+<meta property="og:description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
+<meta property="og:updated_time" content="2017-04-21T17:02:17.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="锤子官网的3D效果轮播图的实现">
-<meta name="twitter:description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css">
+<meta name="twitter:description" content="看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
 
 
 
@@ -353,6 +353,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Coding/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -399,12 +421,10 @@
       
 
       
-        <div><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=431795064&auto=1&height=66"></iframe><br></div>
-
-<p>无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。<br>基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。<br><a id="more"></a></p>
+        <p><div></div></p>
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=431795064&auto=1&height=66"></iframe><br><br>看到锤子官网的3d轮播图的效果，觉得还挺酷炫，便决定把它做出来。<br>基本的思路很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。<br><a id="more"></a></p>
 <pre>
     $(function(){
-
         //轮播图
         var fade_conf= {
             index : 0,
@@ -469,6 +489,20 @@
         })
     })
 </pre>
+
+<p>写完觉得很有趣，又写了一个背景帧动画的效果——每次改变一定量的背景图片position的值</p>
+
+<pre><code>function bgFrame(el,x){
+    for (var i = 0; i &lt; 5; i++) {
+        (function(i) {
+            setTimeout(function() {
+                i = (i-4)*x;
+                $(el).css(&quot;background-position&quot;,&quot;0 &quot;+i+&quot;px&quot;);
+            }, i*100);
+        })(i);
+    }
+}
+</code></pre><p>用了一个简单的闭包实现帧动画效果的函数。函数中两个参数分别是控制帧动画的元素选择器，和每次需要移动的像素。<br>因为setTimeout是异步的，所以在循环里写了一个立即执行函数。</p>
       
     </div>
 
@@ -520,8 +554,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/20/利用js实现背景帧动画/" rel="prev" title="利用js实现背景帧动画">
-                利用js实现背景帧动画 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/20/用nodejs解决http403禁止访问/" rel="prev" title="用nodejs解决http403禁止访问">
+                用nodejs解决http403禁止访问 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -587,7 +621,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -598,7 +632,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -609,7 +643,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

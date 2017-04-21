@@ -1684,7 +1684,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #931321;
+  background: #8b88ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2456,6 +2456,9 @@ pre .javascript .function {
 .page-post-detail .comments {
   overflow: hidden;
 }
+.headband {
+  background: #f74e1e;
+}
 .header {
   background-image: url("/images/bg_header.jpg");
 }
@@ -2474,13 +2477,9 @@ embed {
   background: #f74e1e;
 }
 .use-motion .site-subtitle {
-  color: #102b3d;
+  color: #000;
   font-size: 18px;
   text-shadow: 1px 0px 0px #102b3d;
-}
-#menu {
-  margin: 0 100px;
-  background: rgba(255,255,255,0.4);
 }
 #menu a {
   color: #000;

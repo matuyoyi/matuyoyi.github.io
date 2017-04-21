@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。站在vue数据驱动的角度看，想要视图更新，只能在数据上下手，而不应该从jQuery的视角思考。但这时候可能会有个坑——数据改变了，视图并没更新。">
+<meta name="description" content="vue是基于数据驱动的前端框架，使用的时候得注意将思维从老早的jQuery之类的事件驱动转到数据驱动上来。">
 <meta name="keywords" content="vuejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中视图不更新的问题">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/vue中响应点击事件显示-隐藏div/index.html">
 <meta property="og:site_name" content="陈同学">
-<meta property="og:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。站在vue数据驱动的角度看，想要视图更新，只能在数据上下手，而不应该从jQuery的视角思考。但这时候可能会有个坑——数据改变了，视图并没更新。">
-<meta property="og:updated_time" content="2017-04-21T13:59:25.413Z">
+<meta property="og:description" content="vue是基于数据驱动的前端框架，使用的时候得注意将思维从老早的jQuery之类的事件驱动转到数据驱动上来。">
+<meta property="og:updated_time" content="2017-04-21T17:12:55.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中视图不更新的问题">
-<meta name="twitter:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。站在vue数据驱动的角度看，想要视图更新，只能在数据上下手，而不应该从jQuery的视角思考。但这时候可能会有个坑——数据改变了，视图并没更新。">
+<meta name="twitter:description" content="vue是基于数据驱动的前端框架，使用的时候得注意将思维从老早的jQuery之类的事件驱动转到数据驱动上来。">
 
 
 
@@ -353,6 +353,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Coding/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -399,7 +421,7 @@
       
 
       
-        <p>vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。<br>比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。<br>站在vue数据驱动的角度看，想要视图更新，只能在数据上下手，而不应该从jQuery的视角思考。但这时候可能会有个坑——数据改变了，视图并没更新。<br><a id="more"></a><br>示例：</p>
+        <p>vue是基于数据驱动的前端框架，使用的时候得注意将思维从老早的jQuery之类的事件驱动转到数据驱动上来。<br><a id="more"></a><br>比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。不应该往操作DOM方向去想，站在vue数据驱动的角度看，想要视图更新，只能从数据着手。这时候可能会有个坑——数据改变了，视图却并没更新。<br>示例：</p>
 <pre>
     &lt;div class="cont" v-on:click="toggle(index)" >
         &lt;div class="content" v-if="show_cont[index]">
@@ -537,7 +559,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -548,7 +570,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -559,7 +581,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
