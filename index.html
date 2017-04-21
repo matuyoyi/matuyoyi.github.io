@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -52,13 +52,25 @@
   
 
   
+    
+      
+    
 
+    
+  
+
+  
+    
+      
+    
+
+    
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|monospace:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -103,7 +115,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -460,7 +472,8 @@
 
       
         
-          <p>无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。<br>基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。<br>
+          <p><div></p>
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=4152481&auto=1&height=66"></iframe><br></div><br>无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。<br>基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/锤子官网的3D效果轮播图的实现/#more" rel="contents">
@@ -586,7 +599,18 @@
       
         
           <p>项目中需要用到帧动画的效果，第一反应是用css3的animation去实现。发现写出来的效果不理想，于是决定还是用js写一下。<br>思路每次改变一定量的背景图片position的值</p>
-<p><pre><br>    function bgFrame(el,x){<br>        for (var i = 0; i &lt; 5; i++) {<br>            (function(i) {<br>                setTimeout(function() {<br>                    i = (i-4)<em>x;<br>                    $(el).css(“background-position”,”0 “+i+”px”);<br>                }, i </em> 100);<br>            })(i);<br>        }<br>    }<br></pre><br>
+
+<pre><code>function bgFrame(el,x){
+    for (var i = 0; i &lt; 5; i++) {
+        (function(i) {
+            setTimeout(function() {
+                i = (i-4)*x;
+                $(el).css(&quot;background-position&quot;,&quot;0 &quot;+i+&quot;px&quot;);
+            }, i*100);
+        })(i);
+    }
+}
+</code></pre>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/利用js实现背景帧动画/#more" rel="contents">
@@ -980,7 +1004,8 @@
 
       
         
-          <p>你好，欢迎来到我的个人技术博客。<br>
+          <p><div></p>
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=524640&auto=0&height=66"></iframe><br></div><br>你好，欢迎来到我的个人技术博客。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/20/helloworld/#more" rel="contents">
@@ -1074,12 +1099,50 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
 
         </nav>
 
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/matuyoyi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2702577253" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/chen-nan-19-59-29" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-twitch"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
           
         </div>
 
@@ -1126,7 +1189,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
@@ -1172,6 +1235,8 @@ ga('send', 'pageview');
   
 
 
+  
+
 
 
 
@@ -1193,6 +1258,9 @@ ga('send', 'pageview');
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 

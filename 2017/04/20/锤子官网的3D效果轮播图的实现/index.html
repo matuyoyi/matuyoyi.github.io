@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -52,13 +52,25 @@
   
 
   
+    
+      
+    
 
+    
+  
+
+  
+    
+      
+    
+
+    
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|monospace:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -71,7 +83,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -87,17 +99,17 @@
 
 
 
-<meta name="description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
-<meta name="keywords">
+<meta name="description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="锤子官网的3D效果轮播图的实现">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/锤子官网的3D效果轮播图的实现/index.html">
 <meta property="og:site_name" content="陈同学">
-<meta property="og:description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
-<meta property="og:updated_time" content="2017-04-20T14:25:46.414Z">
+<meta property="og:description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中">
+<meta property="og:updated_time" content="2017-04-21T12:34:01.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="锤子官网的3D效果轮播图的实现">
-<meta name="twitter:description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中t">
+<meta name="twitter:description" content="无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中">
 
 
 
@@ -105,7 +117,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -331,7 +343,8 @@
       
 
       
-        <p>无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。<br>基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。<br><a id="more"></a></p>
+        <p><div></div></p>
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=4152481&auto=1&height=66"></iframe><br><br>无意间看到锤子官网的3d轮播图，觉得挺酷炫。想着自己来实现一遍。<br>基本的思路也很简单：首先肯定要用到css3的3D转换，转换的值需要采集——先在图片区域内建立一个坐标系，以图片的中心为原点——获取e.pageX和e.pageY的值，然后分别减去图片宽、高的一半就能确定原点了。然后监听鼠标在坐标系内移动，确定鼠标相对于坐标系的坐标。通过这个坐标的值(x,y)，经过自定义的运算得到一个值，传给css中transform的rotateX和rotateY。<br><a id="more"></a></p>
 <pre>
     $(function(){
 
@@ -424,6 +437,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
       
 
       
@@ -518,12 +537,50 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
 
         </nav>
 
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/matuyoyi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2702577253" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/chen-nan-19-59-29" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-twitch"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
           
         </div>
 
@@ -570,7 +627,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
@@ -616,6 +673,8 @@ ga('send', 'pageview');
   
 
 
+  
+
 
 
 
@@ -637,6 +696,9 @@ ga('send', 'pageview');
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 

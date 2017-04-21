@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -52,13 +52,25 @@
   
 
   
+    
+      
+    
 
+    
+  
+
+  
+    
+      
+    
+
+    
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|monospace:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -71,7 +83,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vuejs," />
 
 
 
@@ -88,13 +100,13 @@
 
 
 <meta name="description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。只需要改变数组，触发视图更新，不必盯着DOM，这时候有个坑——数据改变了，但视图不更新。">
-<meta name="keywords">
+<meta name="keywords" content="vuejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中视图不更新的问题">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/vue中响应点击事件显示-隐藏div/index.html">
 <meta property="og:site_name" content="陈同学">
 <meta property="og:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。只需要改变数组，触发视图更新，不必盯着DOM，这时候有个坑——数据改变了，但视图不更新。">
-<meta property="og:updated_time" content="2017-04-21T07:14:13.409Z">
+<meta property="og:updated_time" content="2017-04-21T12:23:48.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中视图不更新的问题">
 <meta name="twitter:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。只需要改变数组，触发视图更新，不必盯着DOM，这时候有个坑——数据改变了，但视图不更新。">
@@ -105,7 +117,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -354,6 +366,7 @@
         this.show_cont.splice(i, 1, !this.show_cont[i])
     }
 </pre>
+
       
     </div>
 
@@ -379,6 +392,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vuejs/" rel="tag"># vuejs</a>
+          
+        </div>
       
 
       
@@ -469,12 +488,50 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
 
         </nav>
 
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/matuyoyi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2702577253" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/chen-nan-19-59-29" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-twitch"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
           
         </div>
 
@@ -521,7 +578,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
@@ -567,6 +624,8 @@ ga('send', 'pageview');
   
 
 
+  
+
 
 
 
@@ -588,6 +647,9 @@ ga('send', 'pageview');
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
