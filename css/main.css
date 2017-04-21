@@ -1684,7 +1684,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffa882;
+  background: #6a1a0d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2471,7 +2471,7 @@ embed {
   margin: 0px auto 25px auto;
 }
 .brand {
-  background: #f4922f;
+  background: #f74e1e;
 }
 .use-motion .site-subtitle {
   color: #102b3d;
@@ -2483,7 +2483,11 @@ embed {
   background: rgba(255,255,255,0.4);
 }
 #menu a {
-  color: #f74e1e;
+  color: #000;
+}
+.post-button .btn {
+  background: #f74e1e;
+  border: 2px solid #f74e1e;
 }
 .custom-logo .site-meta-headline {
   text-align: center;
