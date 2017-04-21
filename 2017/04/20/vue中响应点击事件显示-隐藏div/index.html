@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
+<meta name="description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。只需要改变数组，触发视图更新，不必盯着DOM，这时候有个坑——数据改变了，但视图不更新。">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中视图不更新的问题">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/vue中响应点击事件显示-隐藏div/index.html">
 <meta property="og:site_name" content="陈同学">
-<meta property="og:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
-<meta property="og:updated_time" content="2017-04-21T07:09:02.961Z">
+<meta property="og:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。只需要改变数组，触发视图更新，不必盯着DOM，这时候有个坑——数据改变了，但视图不更新。">
+<meta property="og:updated_time" content="2017-04-21T07:14:13.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中视图不更新的问题">
-<meta name="twitter:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。">
+<meta name="twitter:description" content="vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。只需要改变数组，触发视图更新，不必盯着DOM，这时候有个坑——数据改变了，但视图不更新。">
 
 
 
@@ -322,7 +322,7 @@
       
 
       
-        <p>vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。<br>比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。当时折腾了很久，总感觉我拿不到这个dom。<br>最终发现一行代码搞定了，不必盯着DOM，只需要操作数据就行了。但是还有个坑——数据改变了，但视图不更新。<br><a id="more"></a><br>示例：</p>
+        <p>vue是基于数据驱动的前端框架，刚接触不太熟悉时，因为对jQuery更加熟练，会受到jQuery事件驱动的思维的影响。<br>比如下面的示例，想要通过点击事件，切换div的显示/隐藏，从而使得两个div交替显示。<br>只需要改变数组，触发视图更新，不必盯着DOM，这时候有个坑——数据改变了，但视图不更新。<br><a id="more"></a><br>示例：</p>
 <pre>
     &lt;div class="cont" v-on:click="toggle(index)" >
         &lt;div class="content" v-if="show_cont[index]">
@@ -334,7 +334,7 @@
     &lt;/div>
 </pre>
 给.cont绑定一个toggle事件，点击时改变show_cont[index]的值(布尔类型，0/1互相切换)，通过v-if判断是否显示。
-这里还有一个坑是，已经改变了值，但是页面数据不更新，只能在控制台看到值在变化。我理解的是vue的生命周期的问题。mounted挂载完成之后，需要检测数组的变化才能触发视图更新。
+但是会发现已经改变了值，页面数据不更新，只能在控制台看到值在变化。我理解的是vue的生命周期的问题。mounted挂载完成之后，需要检测数组的变化才能触发视图更新。
     // 因为JavaScript 有限制，Vue.js 不能检测到下面数组变化：
     // 1. 直接用索引设置元素，如 vm.items[0] = {}；
     // 2. 修改数据的长度，如 vm.items.length = 0。
