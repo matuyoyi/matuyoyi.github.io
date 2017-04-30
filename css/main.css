@@ -1684,7 +1684,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #14eda3;
+  background: #ffffc9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2477,12 +2477,11 @@ embed {
   background: #f74e1e;
 }
 .use-motion .site-subtitle {
-  color: #000;
-  font-size: 18px;
-  text-shadow: 1px 0px 0px #102b3d;
+  color: #fff;
+  font-size: 22px;
 }
 #menu a {
-  color: #000;
+  color: #1e2b33;
 }
 .post-button .btn {
   background: #f74e1e;
