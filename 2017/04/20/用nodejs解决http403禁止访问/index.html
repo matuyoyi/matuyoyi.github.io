@@ -105,17 +105,17 @@
 
 
 
-<meta name="description" content="有一些开放的API，使用时可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。是因为服务器做了一些限制。绕过限制有一个办法就是使用本地代理。可以用nodejs起一个简单的本地服务解决这个问题。">
+<meta name="description" content="需要用到request模块： $ npm install request var request = require(&amp;quot;request&amp;quot;); var url = require(&amp;apos;url&amp;apos;); var http = require(&amp;apos;http&amp;apos;); http.createServer(function (req, res) {">
 <meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用nodejs解决http403禁止访问">
+<meta property="og:title" content="nodejs解决http403禁止访问资源问题">
 <meta property="og:url" content="https://matuyoyi.github.io/2017/04/20/用nodejs解决http403禁止访问/index.html">
 <meta property="og:site_name" content="陈同学">
-<meta property="og:description" content="有一些开放的API，使用时可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。是因为服务器做了一些限制。绕过限制有一个办法就是使用本地代理。可以用nodejs起一个简单的本地服务解决这个问题。">
-<meta property="og:updated_time" content="2017-04-21T17:12:10.203Z">
+<meta property="og:description" content="需要用到request模块： $ npm install request var request = require(&amp;quot;request&amp;quot;); var url = require(&amp;apos;url&amp;apos;); var http = require(&amp;apos;http&amp;apos;); http.createServer(function (req, res) {">
+<meta property="og:updated_time" content="2017-11-26T13:50:17.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用nodejs解决http403禁止访问">
-<meta name="twitter:description" content="有一些开放的API，使用时可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。是因为服务器做了一些限制。绕过限制有一个办法就是使用本地代理。可以用nodejs起一个简单的本地服务解决这个问题。">
+<meta name="twitter:title" content="nodejs解决http403禁止访问资源问题">
+<meta name="twitter:description" content="需要用到request模块： $ npm install request var request = require(&amp;quot;request&amp;quot;); var url = require(&amp;apos;url&amp;apos;); var http = require(&amp;apos;http&amp;apos;); http.createServer(function (req, res) {">
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <title> 用nodejs解决http403禁止访问 | 陈同学 </title>
+  <title> nodejs解决http403禁止访问资源问题 | 陈同学 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -333,7 +333,7 @@
             
             
               
-                用nodejs解决http403禁止访问
+                nodejs解决http403禁止访问资源问题
               
             
           </h1>
@@ -398,7 +398,7 @@
 
           
           
-             <span id="/2017/04/20/用nodejs解决http403禁止访问/" class="leancloud_visitors" data-flag-title="用nodejs解决http403禁止访问">
+             <span id="/2017/04/20/用nodejs解决http403禁止访问/" class="leancloud_visitors" data-flag-title="nodejs解决http403禁止访问资源问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,7 +427,8 @@
       
 
       
-        <p>有一些开放的API，使用时可能会遇到这样的情况：直接访问连接，能够打开图片。但在项目里直接引用url，会出现403错误。是因为服务器做了一些限制。绕过限制有一个办法就是使用本地代理。可以用nodejs起一个简单的本地服务解决这个问题。<br><a id="more"></a><br>需要用到request模块： $ npm install request</p>
+        <a id="more"></a>
+<p>需要用到request模块： $ npm install request</p>
 <pre><code>var request = require(&quot;request&quot;);
 var url = require(&apos;url&apos;);
 var http = require(&apos;http&apos;);
@@ -440,7 +441,7 @@ http.createServer(function (req, res) {
     }
 }).listen(3000);
 console.log(&apos;Server running at http://127.0.0.1:3000/&apos;);
-</code></pre><p>在项目中引用url时前面加上localhost:3000/?id={url} &nbsp;&nbsp;&nbsp;&nbsp;// {url}为需要引用的真实url。<br>这时项目是在访问localhost:3000,不会有权限问题。<br>在访问localhost:3000/?id={url}时，会经过上面的代码将请求的url解析并存在params变量中，params.url就是项目引用的真实url。然后request(params.url)，相当于本地直接打开{url}链接，通过pipe方法将数据返回回来，就绕过了服务器设置的权限拿到数据。</p>
+</code></pre><p>在项目中引用url时前面加上localhost:3000/?id={url} &nbsp;&nbsp;&nbsp;&nbsp;// {url}为需要引用的真实url。</p>
       
     </div>
 
@@ -482,18 +483,14 @@ console.log(&apos;Server running at http://127.0.0.1:3000/&apos;);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/20/锤子官网的3D效果轮播图的实现/" rel="next" title="锤子官网的3D效果轮播图的实现">
-                <i class="fa fa-chevron-left"></i> 锤子官网的3D效果轮播图的实现
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/20/display-none与visible-hidden的区别/" rel="prev" title="display:none与visible:hidden的区别">
-                display:none与visible:hidden的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/20/helloworld/" rel="prev" title="Hello World!">
+                Hello World! <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -582,7 +579,7 @@ console.log(&apos;Server running at http://127.0.0.1:3000/&apos;);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
